@@ -8005,6 +8005,11 @@ create_queue(void* arg)
     }
     ppdfile = strdup(buf);
   }
+  else
+  {
+    // No PPD - define nickname for remote raw queue
+    p->nickname = strdup(make_model);
+  }
 
   // Create a new CUPS queue or modify the existing queue
   request = ippNewRequest(CUPS_ADD_MODIFY_PRINTER);
