@@ -7542,7 +7542,7 @@ create_queue(void* arg)
       debug_printf("Generated Default Attributes for local queue %s\n",
 		   p->queue_name);
     }
-    if (ppdfile == NULL)
+    if (ppdfile == NULL && make_model && strcmp(make_model, "Local Raw Printer"))
     {
       // If we do not want CUPS-generated PPDs or we cannot obtain a
       // CUPS-generated PPD, for example if CUPS does not create a
@@ -7734,7 +7734,7 @@ create_queue(void* arg)
 	debug_printf("Generated Default Attributes for local queue %s\n",
 		     p->queue_name);
       }
-      if (ppdfile == NULL)
+      if (ppdfile == NULL && make_model && strcmp(make_model, "Local Raw Printer"))
       {
 	// If we do not want CUPS-generated PPDs or we cannot obtain a
 	// CUPS-generated PPD, for example if CUPS does not create a
