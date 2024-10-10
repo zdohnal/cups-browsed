@@ -8007,8 +8007,9 @@ create_queue(void* arg)
   }
   else
   {
-    // No PPD - define nickname for remote raw queue
-    p->nickname = strdup(make_model);
+    // No PPD - define nickname and make_model for remote raw queue
+    p->nickname = strdup("Local Raw Printer");
+    p->make_model = strdup("Local Raw Printer");
   }
 
   // Create a new CUPS queue or modify the existing queue
